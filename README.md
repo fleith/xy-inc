@@ -1,5 +1,12 @@
 # xy-inc
 
+Dependency:
+	npm
+
+Install packages:
+
+	npm install --dev
+
 To run you project, execute the command:
 
 	node .

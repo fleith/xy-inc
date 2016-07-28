@@ -23,7 +23,9 @@
     "eslint": "^2.5.3",
     "nsp": "^2.1.0",
     "mocha": "^2.5.3",
-    "eslint-config-loopback": "^4.0.0"
+    "eslint-config-loopback": "^4.0.0",
+    "chai": "3.5.0",
+    "supertest": "1.2.0"
   },
   "repository": {
     "type": "",
