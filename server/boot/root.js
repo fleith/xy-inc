@@ -2,7 +2,7 @@ module.exports = function(server) {
   // Install a `/` route that returns server status
   var router = server.loopback.Router();
   router.get('/', server.loopback.status());
-  router.post('/createModel', function(req, res)
+  router.post('/create/model', function(req, res)
 			{
 			    var db = server.dataSources.db;
 			    var new_model = req.body;
