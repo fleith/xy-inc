@@ -7,9 +7,16 @@ module.exports = function(server) {
   router.post('/create/model', function(req, res) {
     var db = server.dataSources.db;
     var newModel = req.body;
-    var model = db.createModel(newModel['name'], newModel['fields']);
-    server.model(model);
-    res.send('Model created!');
+    console.log('newModel: ', newModel);
+    try {
+      var model = db.createModel(newModel['name'], newModel['fields']);
+      server.model(model);
+      res.send('Model created!');
+    } catch (err) {
+      res.status(500).send('Error on create new model. ' +
+      	'Body format should be ' +
+      	'{"name": "MyModel", "fields": {"name": "string"}}');
+    }
   });
   server.use(router);
 };

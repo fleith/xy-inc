@@ -1,5 +1,13 @@
 'use strict';
 
-var should = require('chai').should();
 var supertest = require('supertest');
-var api = supertest('http://localhost:5000');
+var app = require('../server/server');
+
+describe('POST /create/model', function() {
+  it('Fail on empty body', function(done) {
+    supertest(app)
+      .post('/create/model')
+      .set('Accept', 'application/json')
+      .expect(500, done);
+  });
+});
