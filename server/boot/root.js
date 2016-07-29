@@ -7,7 +7,6 @@ module.exports = function(server) {
   router.post('/create/model', function(req, res) {
     var db = server.dataSources.db;
     var newModel = req.body;
-    console.log('newModel: ', newModel);
     try {
       var model = db.createModel(newModel['name'], newModel['fields']);
       server.model(model);
